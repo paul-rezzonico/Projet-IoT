@@ -1,60 +1,52 @@
 ﻿using Meadow;
 using Meadow.Devices;
-using Meadow.Foundation.Leds;
-using Meadow.Peripherals.Leds;
+using Meadow.Foundation.Sensors.Atmospheric;
 using System;
 using System.Threading.Tasks;
 
-namespace Projet_IoT;
-
-public class MeadowApp : App<F7FeatherV2>
+namespace MeadowApp
 {
-    RgbPwmLed onboardLed;
-
-    public override Task Initialize()
+    public class MeadowApp : App<F7FeatherV2>
     {
-        Resolver.Log.Info("Initialize...");
+        Bmp280? bmp;
 
-        onboardLed = new RgbPwmLed(
-            redPwmPin: Device.Pins.OnboardLedRed,
-            greenPwmPin: Device.Pins.OnboardLedGreen,
-            bluePwmPin: Device.Pins.OnboardLedBlue,
-            CommonType.CommonAnode);
-
-        return base.Initialize();
-    }
-
-    public override Task Run()
-    {
-        Resolver.Log.Info("Run...");
-
-        return CycleColors(TimeSpan.FromMilliseconds(1000));
-    }
-
-    async Task CycleColors(TimeSpan duration)
-    {
-        Resolver.Log.Info("Cycle colors...");
-
-        while (true)
+        public override async Task Initialize()
         {
-            await ShowColorPulse(Color.Blue, duration);
-            await ShowColorPulse(Color.Cyan, duration);
-            await ShowColorPulse(Color.Green, duration);
-            await ShowColorPulse(Color.GreenYellow, duration);
-            await ShowColorPulse(Color.Yellow, duration);
-            await ShowColorPulse(Color.Orange, duration);
-            await ShowColorPulse(Color.OrangeRed, duration);
-            await ShowColorPulse(Color.Red, duration);
-            await ShowColorPulse(Color.MediumVioletRed, duration);
-            await ShowColorPulse(Color.Purple, duration);
-            await ShowColorPulse(Color.Magenta, duration);
-            await ShowColorPulse(Color.Pink, duration);
-        }
-    }
+            Console.WriteLine("Initialize...");
 
-    async Task ShowColorPulse(Color color, TimeSpan duration)
-    {
-        await onboardLed.StartPulse(color, duration / 2);
-        await Task.Delay(duration);
+            var i2CBus = Device.CreateI2cBus();
+
+            // 0x76 (SDO=GND) ou 0x77 (SDO=3V3)
+            bmp = new Bmp280(i2CBus, address:0x76);
+
+            // Abonnement à l'événement Updated (pattern Meadow.Foundation)
+            bmp.Updated += (s, result) =>
+            {
+                var (t, p) = result.New;
+
+                if (p is not null)
+                    Console.WriteLine($"Pressure: {p.Value.Pascal:F2 / 100} hPa");
+
+                if (t is not null)
+                    Console.WriteLine($"Temp: {t.Value.Celsius:F2} °C");
+            };
+
+            // Lecture ponctuelle
+            var (temperature, pressure) = await bmp.Read();
+            if (pressure is not null)
+                Console.WriteLine($"(Read) Pressure: {pressure.Value.Pascal:F2 / 100} hPa");
+            if (temperature is not null)
+                Console.WriteLine($"(Read) Temp: {temperature.Value.Celsius:F2} °C");
+        }
+
+        public override Task Run()
+        {
+            if (bmp is null) return Task.CompletedTask;
+
+            Console.WriteLine("StartUpdating every 1s...");
+            bmp.StartUpdating(TimeSpan.FromSeconds(1));
+
+            return Task.CompletedTask;
+        }
     }
 }
