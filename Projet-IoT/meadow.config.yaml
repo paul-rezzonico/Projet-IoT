@@ -25,38 +25,38 @@ Coprocessor:
     MaximumRetryCount: 7
 
 # Network configuration.
-#Network:
+Network:
 
     # Network Interface (Default value is WiFi with DHCP)
-#    Interfaces:
-#        - Name: Ethernet
-#          UseDHCP: false
-#          IPAddress: 192.168.1.60
-#          NetMask: 255.255.255.0
-#          Gateway: 192.168.1.254
-#        - Name: WiFi
-#          UseDHCP: true
-#          IPAddress:
-#          NetMask:
-#          Gateway:
+    Interfaces:
+        - Name: Ethernet
+          UseDHCP: false
+          IPAddress: 192.168.1.60
+          NetMask: 255.255.255.0
+          Gateway: 192.168.1.254
+        - Name: WiFi
+          UseDHCP: true
+          IPAddress:
+          NetMask:
+          Gateway:
 
     # Default Interface
-#    DefaultInterface: Wifi
+    DefaultInterface: Wifi
 
     # Automatically attempt to get the time at startup?
-#    GetNetworkTimeAtStartup: true
+    GetNetworkTimeAtStartup: true
 
     # Time synchronization period in seconds.
-#    NtpRefreshPeriod: 600
+    NtpRefreshPeriod: 600
 
     # Name of the NTP servers.
-#    NtpServers:
-#        - 0.pool.ntp.org
-#        - 1.pool.ntp.org
-#        - 2.pool.ntp.org
-#        - 3.pool.ntp.org
+    NtpServers:
+        - 0.pool.ntp.org
+        - 1.pool.ntp.org
+        - 2.pool.ntp.org
+        - 3.pool.ntp.org
 
     # IP addresses of the DNS servers.
-#    DnsServers:
-#        - 1.1.1.1
-#        - 8.8.8.8
+    DnsServers:
+        - 1.1.1.1
+        - 8.8.8.8
