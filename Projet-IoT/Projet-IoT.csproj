@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+<Project Sdk="Meadow.Sdk/1.1.0">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <OutputType>Library</OutputType>
+        <AssemblyName>App</AssemblyName>
+        <LangVersion>10.0</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Meadow.F7" Version="2.*"/>
+        <PackageReference Include="Meadow.Foundation" Version="2.*"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="meadow.config.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="app.config.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="wifi.config.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+=======
 <Project Sdk="Meadow.Sdk/1.1.0">
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
@@ -23,4 +48,5 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
+>>>>>>> 843af4b206c2e3dd2b0f2d3661848c1043cc6134
 </Project>

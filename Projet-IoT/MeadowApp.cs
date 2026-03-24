@@ -1,4 +1,4 @@
-﻿using Meadow;
+using Meadow;
 using Meadow.Devices;
 using Meadow.Foundation.Sensors.Atmospheric;
 using System;
