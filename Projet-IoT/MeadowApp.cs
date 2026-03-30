@@ -85,6 +85,11 @@ namespace MeadowApp
             }
         }
 
+        public void sendFakeData()
+        {
+            
+        }
+
         public override async Task Initialize()
         {
             Console.WriteLine("Initialize...");
@@ -120,6 +125,7 @@ namespace MeadowApp
 
             Console.WriteLine("StartUpdating every 1s...");
             bmp.StartUpdating(TimeSpan.FromSeconds(1));
+            
 
             return Task.CompletedTask;
         }
