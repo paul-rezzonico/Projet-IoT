@@ -86,8 +86,10 @@ namespace MeadowApp
         }
 
         public void sendFakeData()
-        {
-            
+        {            
+            double fakeTemperature = 25.0;
+            double fakePressure = 101325.0;
+            sendDataToAzure(fakeTemperature, fakePressure);
         }
 
         public override async Task Initialize()
