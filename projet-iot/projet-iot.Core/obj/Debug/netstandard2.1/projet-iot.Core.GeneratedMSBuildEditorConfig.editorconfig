@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = projet-iot.Core
+build_property.ProjectDir = C:\Users\rezpo\projet-iot\projet-iot\projet-iot.Core\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

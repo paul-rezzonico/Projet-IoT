@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "QPLNdDwmnVE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.contracts\\2.5.0\\meadow.contracts.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation\\2.5.0\\meadow.foundation.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.graphics.micrographics\\2.5.0\\meadow.foundation.graphics.micrographics.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.graphics.microlayout\\2.5.0\\meadow.foundation.graphics.microlayout.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.serialization.microjson\\2.5.0\\meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging\\2.5.0\\meadow.logging.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.units\\2.5.0\\meadow.units.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\mqttnet\\4.3.7.1207\\mqttnet.4.3.7.1207.nupkg.sha512"
+  ],
+  "logs": []
+}

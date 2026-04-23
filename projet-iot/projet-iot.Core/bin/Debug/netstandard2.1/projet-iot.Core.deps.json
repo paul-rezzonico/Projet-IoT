@@ -1,0 +1,164 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "projet-iot.Core/1.0.0": {
+        "dependencies": {
+          "MQTTnet": "4.3.7.1207",
+          "Meadow.Foundation": "2.5.0",
+          "Meadow.Foundation.Graphics.MicroLayout": "2.5.0",
+          "Meadow.Foundation.Serialization.MicroJson": "2.5.0"
+        },
+        "runtime": {
+          "projet-iot.Core.dll": {}
+        }
+      },
+      "Meadow.Contracts/2.5.0": {
+        "dependencies": {
+          "Meadow.Logging": "2.5.0",
+          "Meadow.Units": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Contracts.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Foundation/2.5.0": {
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Foundation.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Foundation.Graphics.MicroGraphics/2.5.0": {
+        "dependencies": {
+          "Meadow.Foundation": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MicroGraphics.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Foundation.Graphics.MicroLayout/2.5.0": {
+        "dependencies": {
+          "Meadow.Foundation.Graphics.MicroGraphics": "2.5.0",
+          "Meadow.Foundation.Serialization.MicroJson": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MicroLayout.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/MicroJson.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Logging/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Logging.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Units/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Units.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "MQTTnet/4.3.7.1207": {
+        "runtime": {
+          "lib/netstandard2.1/MQTTnet.dll": {
+            "assemblyVersion": "4.3.7.1207",
+            "fileVersion": "4.3.7.1207"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "projet-iot.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Meadow.Contracts/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3zL6p0b6Kv/rafvSBh3pi0r/7zbYKGp6SX9MN2AQ5hsjCOg9wMmPu386viCKCcMS/XxugPp2OjhsCL6xJHhDOA==",
+      "path": "meadow.contracts/2.5.0",
+      "hashPath": "meadow.contracts.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Foundation/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fO6VDZIvqyBvjGt8Rgm4mxVxGjTLSM44HEAoWUvEueRo/jOpLsKyFMhwm+iHC00zxFD8DD5S+XyawRQn8fvRXQ==",
+      "path": "meadow.foundation/2.5.0",
+      "hashPath": "meadow.foundation.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Foundation.Graphics.MicroGraphics/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nzaX7fP+9CdJ2VpZmLBy0NN6dvzOWmaMrjhIJ9KbmYoRRjNOpJF02tCti/URbPLdpPgCnbXQwjq05LCPZib67A==",
+      "path": "meadow.foundation.graphics.micrographics/2.5.0",
+      "hashPath": "meadow.foundation.graphics.micrographics.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Foundation.Graphics.MicroLayout/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0+45kXjR5g2sbjJvbEXxpwRpXpo4dCYAaSb7CZKKjkGUGeXOYFuaqE92HC3cOHE16xchO/ahlvZ67ESvCsE4kQ==",
+      "path": "meadow.foundation.graphics.microlayout/2.5.0",
+      "hashPath": "meadow.foundation.graphics.microlayout.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DcSejZ2YOC19NSp3l20mz3y4sMMxtdMtKbGm+BNqoTuYxApIkc2gV8436yBGXVJt+plxqshnqSfnPlKhJdF3zA==",
+      "path": "meadow.foundation.serialization.microjson/2.5.0",
+      "hashPath": "meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Logging/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c/7QXEGvWtcwWQ2t87KjoKzxL5u7OexrlP8sgLuz2QF3UhLtTXZeZyuxci8eqe2IsnWE6dzfsxG166vlAf97eQ==",
+      "path": "meadow.logging/2.5.0",
+      "hashPath": "meadow.logging.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Units/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J2mhHs9M6dHUKJvPfoeVvO5lNIAZL0YV67EUHxhoUaRNncTP3U4l7h3YhdRTll4kV7R8tCDbh4s/bDJC+IXBow==",
+      "path": "meadow.units/2.5.0",
+      "hashPath": "meadow.units.2.5.0.nupkg.sha512"
+    },
+    "MQTTnet/4.3.7.1207": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ah7aHXoedWp5m5a4zy2u4phOEVj0QFYzOb5tFKQeV8RRBrxp+1QREF4ymZuG8D+hzB2dhtrrG81WxTFv0PzOeQ==",
+      "path": "mqttnet/4.3.7.1207",
+      "hashPath": "mqttnet.4.3.7.1207.nupkg.sha512"
+    }
+  }
+}

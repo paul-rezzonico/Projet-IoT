@@ -1,0 +1,354 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "Meadow.Contracts/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Logging": "2.5.0",
+          "Meadow.Units": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Meadow.Contracts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Foundation/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Meadow.Foundation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Foundation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Foundation.Graphics.MicroGraphics/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Foundation": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MicroGraphics.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MicroGraphics.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Foundation.Graphics.MicroLayout/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Foundation.Graphics.MicroGraphics": "2.5.0",
+          "Meadow.Foundation.Serialization.MicroJson": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MicroLayout.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MicroLayout.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MicroJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MicroJson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Logging/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Meadow.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Logging.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Meadow.Units/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Meadow.Units.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.Units.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MQTTnet/4.3.7.1207": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Meadow.Contracts/2.5.0": {
+      "sha512": "3zL6p0b6Kv/rafvSBh3pi0r/7zbYKGp6SX9MN2AQ5hsjCOg9wMmPu386viCKCcMS/XxugPp2OjhsCL6xJHhDOA==",
+      "type": "package",
+      "path": "meadow.contracts/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.Contracts.dll",
+        "lib/netstandard2.1/Meadow.Contracts.xml",
+        "meadow.contracts.2.5.0.nupkg.sha512",
+        "meadow.contracts.nuspec"
+      ]
+    },
+    "Meadow.Foundation/2.5.0": {
+      "sha512": "fO6VDZIvqyBvjGt8Rgm4mxVxGjTLSM44HEAoWUvEueRo/jOpLsKyFMhwm+iHC00zxFD8DD5S+XyawRQn8fvRXQ==",
+      "type": "package",
+      "path": "meadow.foundation/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.Foundation.dll",
+        "lib/netstandard2.1/Meadow.Foundation.xml",
+        "meadow.foundation.2.5.0.nupkg.sha512",
+        "meadow.foundation.nuspec"
+      ]
+    },
+    "Meadow.Foundation.Graphics.MicroGraphics/2.5.0": {
+      "sha512": "nzaX7fP+9CdJ2VpZmLBy0NN6dvzOWmaMrjhIJ9KbmYoRRjNOpJF02tCti/URbPLdpPgCnbXQwjq05LCPZib67A==",
+      "type": "package",
+      "path": "meadow.foundation.graphics.micrographics/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/MicroGraphics.dll",
+        "lib/netstandard2.1/MicroGraphics.xml",
+        "meadow.foundation.graphics.micrographics.2.5.0.nupkg.sha512",
+        "meadow.foundation.graphics.micrographics.nuspec"
+      ]
+    },
+    "Meadow.Foundation.Graphics.MicroLayout/2.5.0": {
+      "sha512": "0+45kXjR5g2sbjJvbEXxpwRpXpo4dCYAaSb7CZKKjkGUGeXOYFuaqE92HC3cOHE16xchO/ahlvZ67ESvCsE4kQ==",
+      "type": "package",
+      "path": "meadow.foundation.graphics.microlayout/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/MicroLayout.dll",
+        "lib/netstandard2.1/MicroLayout.xml",
+        "meadow.foundation.graphics.microlayout.2.5.0.nupkg.sha512",
+        "meadow.foundation.graphics.microlayout.nuspec"
+      ]
+    },
+    "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
+      "sha512": "DcSejZ2YOC19NSp3l20mz3y4sMMxtdMtKbGm+BNqoTuYxApIkc2gV8436yBGXVJt+plxqshnqSfnPlKhJdF3zA==",
+      "type": "package",
+      "path": "meadow.foundation.serialization.microjson/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/MicroJson.dll",
+        "lib/netstandard2.1/MicroJson.xml",
+        "meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512",
+        "meadow.foundation.serialization.microjson.nuspec"
+      ]
+    },
+    "Meadow.Logging/2.5.0": {
+      "sha512": "c/7QXEGvWtcwWQ2t87KjoKzxL5u7OexrlP8sgLuz2QF3UhLtTXZeZyuxci8eqe2IsnWE6dzfsxG166vlAf97eQ==",
+      "type": "package",
+      "path": "meadow.logging/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.Logging.dll",
+        "lib/netstandard2.1/Meadow.Logging.xml",
+        "meadow.logging.2.5.0.nupkg.sha512",
+        "meadow.logging.nuspec"
+      ]
+    },
+    "Meadow.Units/2.5.0": {
+      "sha512": "J2mhHs9M6dHUKJvPfoeVvO5lNIAZL0YV67EUHxhoUaRNncTP3U4l7h3YhdRTll4kV7R8tCDbh4s/bDJC+IXBow==",
+      "type": "package",
+      "path": "meadow.units/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.Units.dll",
+        "lib/netstandard2.1/Meadow.Units.xml",
+        "meadow.units.2.5.0.nupkg.sha512",
+        "meadow.units.nuspec"
+      ]
+    },
+    "MQTTnet/4.3.7.1207": {
+      "sha512": "ah7aHXoedWp5m5a4zy2u4phOEVj0QFYzOb5tFKQeV8RRBrxp+1QREF4ymZuG8D+hzB2dhtrrG81WxTFv0PzOeQ==",
+      "type": "package",
+      "path": "mqttnet/4.3.7.1207",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MQTTnet.dll",
+        "lib/net452/MQTTnet.xml",
+        "lib/net461/MQTTnet.dll",
+        "lib/net461/MQTTnet.xml",
+        "lib/net48/MQTTnet.dll",
+        "lib/net48/MQTTnet.xml",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.xml",
+        "lib/net6.0/MQTTnet.dll",
+        "lib/net6.0/MQTTnet.xml",
+        "lib/net7.0/MQTTnet.dll",
+        "lib/net7.0/MQTTnet.xml",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.xml",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.xml",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.xml",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.xml",
+        "lib/uap10.0.10240/MQTTnet.dll",
+        "lib/uap10.0.10240/MQTTnet.pri",
+        "lib/uap10.0.10240/MQTTnet.xml",
+        "mqttnet.4.3.7.1207.nupkg.sha512",
+        "mqttnet.nuspec",
+        "nuget.png"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "MQTTnet >= 4.*",
+      "Meadow.Foundation >= 2.*",
+      "Meadow.Foundation.Graphics.MicroLayout >= 2.*",
+      "Meadow.Foundation.Serialization.MicroJson >= 2.*"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\rezpo\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
+      "projectName": "projet-iot.Core",
+      "projectPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
+      "packagesPath": "C:\\Users\\rezpo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\rezpo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.200"
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
+        "dependencies": {
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[4.*, )"
+          },
+          "Meadow.Foundation": {
+            "target": "Package",
+            "version": "[2.*, )"
+          },
+          "Meadow.Foundation.Graphics.MicroLayout": {
+            "target": "Package",
+            "version": "[2.*, )"
+          },
+          "Meadow.Foundation.Serialization.MicroJson": {
+            "target": "Package",
+            "version": "[2.*, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "NETStandard.Library": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
