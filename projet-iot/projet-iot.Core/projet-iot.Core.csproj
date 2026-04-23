@@ -13,6 +13,7 @@
         <PackageReference Include="Meadow.Foundation" Version="2.*"/>
         <PackageReference Include="Meadow.Foundation.Graphics.MicroLayout" Version="2.*"/>
         <PackageReference Include="Meadow.Foundation.Serialization.MicroJson" Version="2.*"/>
+        <PackageReference Include="Meadow.Logging.LogProviders" Version="2.*"/>
         <PackageReference Include="MQTTnet" Version="4.*"/>
     </ItemGroup>
 </Project>

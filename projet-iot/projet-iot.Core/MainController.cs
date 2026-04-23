@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Meadow;
+using Meadow.Logging;
 using Meadow.Units;
 using projet_iot.Core.Contracts;
 
@@ -28,6 +29,10 @@ public class MainController
     private Temperature.UnitType units;
     private Temperature currentTemperature;
     private Temperature thresholdTemperature;
+    private bool? isBelowThreshold;
+    private DateTime lastTelemetryPublishUtc = DateTime.MinValue;
+
+    private static readonly TimeSpan TelemetryInterval = TimeSpan.FromSeconds(30);
 
     public MainController()
     {
@@ -46,7 +51,17 @@ public class MainController
 
         // create generic services
         configurationController = new ConfigurationController();
-        cloudController = new CloudController(Resolver.CommandService);
+        CloudLogger? cloudLogger = null;
+        try
+        {
+            cloudLogger = Resolver.Services.Get<CloudLogger>();
+        }
+        catch
+        {
+            // Cloud logger is optional per target.
+        }
+
+        cloudController = new CloudController(Resolver.CommandService, cloudLogger);
         sensorController = new SensorController(hardware);
         inputController = new InputController(hardware);
 
@@ -79,7 +94,26 @@ public class MainController
 
     private void CheckTemperaturesAndSetOutput()
     {
-        OutputController?.SetState(currentTemperature < thresholdTemperature);
+        var belowThreshold = currentTemperature < thresholdTemperature;
+        OutputController?.SetState(belowThreshold);
+
+        if (isBelowThreshold is null)
+        {
+            isBelowThreshold = belowThreshold;
+            return;
+        }
+
+        if (belowThreshold != isBelowThreshold.Value)
+        {
+            isBelowThreshold = belowThreshold;
+            _ = CloudController.PublishThresholdEventAsync(currentTemperature, thresholdTemperature, belowThreshold);
+            _ = CloudController.PublishTelemetryAsync(
+                currentTemperature,
+                TryGetPressurePa(),
+                thresholdTemperature,
+                NetworkController.IsConnected,
+                "threshold-cross");
+        }
     }
 
     private void OnCurrentTemperatureChanged(object sender, Temperature temperature)
@@ -88,8 +122,24 @@ public class MainController
 
         CheckTemperaturesAndSetOutput();
 
+        if (DateTime.UtcNow - lastTelemetryPublishUtc >= TelemetryInterval)
+        {
+            lastTelemetryPublishUtc = DateTime.UtcNow;
+            _ = CloudController.PublishTelemetryAsync(
+                currentTemperature,
+                TryGetPressurePa(),
+                thresholdTemperature,
+                NetworkController.IsConnected,
+                "interval");
+        }
+
         // update the UI
         DisplayController.UpdateCurrentTemperature(currentTemperature);
+    }
+
+    private double? TryGetPressurePa()
+    {
+        return Hardware.PressureSensor is null ? null : SensorController.CurrentPressure.Pascal;
     }
 
     private void OnUnitsChangeChangeRequested(object sender, Temperature.UnitType units)

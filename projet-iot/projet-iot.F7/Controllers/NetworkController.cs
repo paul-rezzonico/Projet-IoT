@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Meadow;
 using Meadow.Devices;
 using Meadow.Hardware;
 using projet_iot.Core;
@@ -31,12 +32,12 @@ internal class NetworkController : INetworkController
 
     private void OnNetworkDisconnected(INetworkAdapter sender, NetworkDisconnectionEventArgs args)
     {
-        // Handle logic when disconnected.
+        NetworkStatusChanged?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnNetworkConnected(INetworkAdapter sender, NetworkConnectionEventArgs args)
     {
-        // Handle logic when connected.
+        NetworkStatusChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public bool IsConnected

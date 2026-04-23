@@ -1,7 +1,9 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Meadow;
 using Meadow.Cloud;
+using Meadow.Logging;
 using Meadow.Units;
 using MQTTnet;
 using MQTTnet.Client;
@@ -11,16 +13,23 @@ namespace projet_iot.Core;
 
 public class CloudController
 {
-    // Azure IoT Hub configuration
-    private const string Hostname = "meadow-iot-hub.azure-devices.net";
-    private const string DeviceId = "meadow-device";
-    private const string SasToken = "SharedAccessSignature sr=meadow-iot-hub.azure-devices.net%2Fdevices%2Fmeadow-device&sig=NNGAYMWdTucxAe%2BSysHUMMl%2BWNNd3XJ3d2uqS7o2PXo%3D&se=1774344713";
+    // Legacy Azure MQTT support is optional and disabled unless configured.
+    private static readonly string Hostname = Environment.GetEnvironmentVariable("AZURE_IOT_HUB_HOSTNAME") ?? string.Empty;
+    private static readonly string DeviceId = Environment.GetEnvironmentVariable("AZURE_IOT_DEVICE_ID") ?? string.Empty;
+    private static readonly string SasToken = Environment.GetEnvironmentVariable("AZURE_IOT_SAS_TOKEN") ?? string.Empty;
+
+    private const int TelemetryEventId = 1000;
+    private const int ThresholdEventId = 1001;
+
+    private readonly CloudLogger? cloudLogger;
 
     public event EventHandler<Temperature.UnitType>? UnitsChangeRequested;
     public event EventHandler<Temperature>? ThresholdTemperatureChangeRequested;
 
-    public CloudController(ICommandService? commandService)
+    public CloudController(ICommandService? commandService, CloudLogger? cloudLogger = null)
     {
+        this.cloudLogger = cloudLogger;
+
         // On Desktop, commandService is null — skip cloud command wiring entirely
         if (commandService is null)
         {
@@ -32,6 +41,56 @@ public class CloudController
         commandService.Subscribe<ChangeThresholdCommand>(OnChangeThresholdCommandReceived);
     }
 
+    public Task PublishTelemetryAsync(
+        Temperature temperature,
+        double? pressurePa,
+        Temperature thresholdTemperature,
+        bool networkConnected,
+        string reason)
+    {
+        if (cloudLogger is null)
+        {
+            return Task.CompletedTask;
+        }
+
+        var measurements = new Dictionary<string, object>
+        {
+            { "tempC", Math.Round(temperature.Celsius, 2) },
+            { "thresholdC", Math.Round(thresholdTemperature.Celsius, 2) },
+            { "net", networkConnected },
+            { "reason", reason }
+        };
+
+        if (pressurePa is { } pressure)
+        {
+            measurements["pressurePa"] = Math.Round(pressure, 0);
+        }
+
+        cloudLogger.LogEvent(TelemetryEventId, "env-reading", measurements);
+        return Task.CompletedTask;
+    }
+
+    public Task PublishThresholdEventAsync(
+        Temperature temperature,
+        Temperature thresholdTemperature,
+        bool isBelowThreshold)
+    {
+        if (cloudLogger is null)
+        {
+            return Task.CompletedTask;
+        }
+
+        var measurements = new Dictionary<string, object>
+        {
+            { "tempC", Math.Round(temperature.Celsius, 2) },
+            { "thresholdC", Math.Round(thresholdTemperature.Celsius, 2) },
+            { "below", isBelowThreshold }
+        };
+
+        cloudLogger.LogEvent(ThresholdEventId, "threshold-cross", measurements);
+        return Task.CompletedTask;
+    }
+
     /// <summary>
     /// Sends temperature and pressure data to Azure IoT Hub via MQTT over TLS.
     /// </summary>
@@ -39,6 +98,14 @@ public class CloudController
     {
         try
         {
+            if (string.IsNullOrWhiteSpace(Hostname) ||
+                string.IsNullOrWhiteSpace(DeviceId) ||
+                string.IsNullOrWhiteSpace(SasToken))
+            {
+                Resolver.Log.Warn("Azure MQTT settings are not configured. Skipping Azure publish.");
+                return false;
+            }
+
             string clientId = $"{Hostname}/{DeviceId}/?api-version=2021-04-12";
             string username = $"{Hostname}/{DeviceId}/?api-version=2021-04-12";
             string topic = $"devices/{DeviceId}/messages/events/";
