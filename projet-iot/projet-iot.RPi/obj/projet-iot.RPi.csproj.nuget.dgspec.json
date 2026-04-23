@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj": {}
+    "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj": {
+    "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
+        "projectUniqueName": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
         "projectName": "projet-iot.Core",
-        "projectPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
+        "projectPath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj",
         "packagesPath": "C:\\Users\\rezpo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\obj\\",
+        "outputPath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rezpo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj": {
+    "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
+        "projectUniqueName": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
         "projectName": "projet-iot.RPi",
-        "projectPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
+        "projectPath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
         "packagesPath": "C:\\Users\\rezpo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\obj\\",
+        "outputPath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rezpo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -107,8 +107,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj": {
-                "projectPath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj"
+              "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj": {
+                "projectPath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.Core\\projet-iot.Core.csproj"
               }
             }
           }

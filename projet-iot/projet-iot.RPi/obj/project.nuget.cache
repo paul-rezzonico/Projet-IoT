@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ungnMS/fHZ0=",
+  "dgSpecHash": "4//zsRcNS1g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
+  "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rezpo\\.nuget\\packages\\atksharp\\3.24.24.95\\atksharp.3.24.24.95.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\cairosharp\\3.24.24.95\\cairosharp.3.24.24.95.nupkg.sha512",

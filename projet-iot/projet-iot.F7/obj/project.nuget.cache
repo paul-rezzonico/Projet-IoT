@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Anl2c01HsXo=",
+  "dgSpecHash": "cRHF01ueODo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rezpo\\projet-iot\\projet-iot\\projet-iot.F7\\projet-iot.F7.csproj",
+  "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.F7\\projet-iot.F7.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow\\2.5.0\\meadow.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.contracts\\2.5.0\\meadow.contracts.2.5.0.nupkg.sha512",

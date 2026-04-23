@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = projet-iot.F7
-build_property.ProjectDir = C:\Users\rezpo\projet-iot\projet-iot\projet-iot.F7\
+build_property.ProjectDir = C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
