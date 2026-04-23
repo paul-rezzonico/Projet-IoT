@@ -1,0 +1,14 @@
+﻿# Build outputs
+**/bin/
+**/obj/
+
+# Logs
+*.log
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
