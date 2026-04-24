@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Meadow;
 using Meadow.Devices;
@@ -13,10 +14,10 @@ public class MeadowF7FeatherApp : App<F7FeatherV2>
 
     public override Task Initialize()
     {
-        ConfigureCloudLogging();
+        var telemetryPublisher = ConfigureTelemetryPublisher();
 
         var hardware = new projet_iotF7FeatherHardware(Device);
-        mainController = new MainController();
+        mainController = new MainController(telemetryPublisher);
         return mainController.Initialize(hardware);
     }
 
@@ -30,10 +31,39 @@ public class MeadowF7FeatherApp : App<F7FeatherV2>
         return mainController.Run();
     }
 
-    private static void ConfigureCloudLogging()
+    private static ITelemetryPublisher ConfigureTelemetryPublisher()
     {
-        var cloudLogger = new CloudLogger();
-        Resolver.Log.AddProvider(cloudLogger);
-        Resolver.Services.Add(cloudLogger);
+        var settings = TelemetryTargetSettings.Load();
+        var sinks = new List<ITelemetrySink>();
+
+        if (ReadBool("TELEMETRY_MEADOW_ENABLED", settings.MeadowEnabled ?? true))
+        {
+            var cloudLogger = new CloudLogger();
+            Resolver.Log.AddProvider(cloudLogger);
+            Resolver.Services.Add(cloudLogger);
+            sinks.Add(new MeadowCloudTelemetrySink(cloudLogger));
+        }
+
+        var azureOptions = AzureMqttTelemetryOptions.FromEnvironment(settings);
+        if (azureOptions.Enabled)
+        {
+            sinks.Add(new AzureMqttTelemetrySink(azureOptions));
+        }
+
+        return new MultiSinkTelemetryPublisher(sinks);
+    }
+
+    private static bool ReadBool(string variable, bool defaultValue)
+    {
+        var value = Environment.GetEnvironmentVariable(variable);
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return defaultValue;
+        }
+
+        return value.Equals("1", StringComparison.OrdinalIgnoreCase) ||
+               value.Equals("true", StringComparison.OrdinalIgnoreCase) ||
+               value.Equals("yes", StringComparison.OrdinalIgnoreCase) ||
+               value.Equals("on", StringComparison.OrdinalIgnoreCase);
     }
 }

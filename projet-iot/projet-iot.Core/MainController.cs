@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Meadow;
-using Meadow.Logging;
 using Meadow.Units;
 using projet_iot.Core.Contracts;
 
@@ -9,6 +8,8 @@ namespace projet_iot.Core;
 
 public class MainController
 {
+    private readonly ITelemetryPublisher telemetryPublisher;
+
     private Iprojet_iotHardware? hardware;
 
     private CloudController? cloudController;
@@ -34,8 +35,9 @@ public class MainController
 
     private static readonly TimeSpan TelemetryInterval = TimeSpan.FromSeconds(30);
 
-    public MainController()
+    public MainController(ITelemetryPublisher? telemetryPublisher = null)
     {
+        this.telemetryPublisher = telemetryPublisher ?? NoOpTelemetryPublisher.Instance;
     }
 
     public async Task Initialize(Iprojet_iotHardware hardware)
@@ -51,17 +53,7 @@ public class MainController
 
         // create generic services
         configurationController = new ConfigurationController();
-        CloudLogger? cloudLogger = null;
-        try
-        {
-            cloudLogger = Resolver.Services.Get<CloudLogger>();
-        }
-        catch
-        {
-            // Cloud logger is optional per target.
-        }
-
-        cloudController = new CloudController(Resolver.CommandService, cloudLogger);
+        cloudController = new CloudController(Resolver.CommandService, telemetryPublisher);
         sensorController = new SensorController(hardware);
         inputController = new InputController(hardware);
 

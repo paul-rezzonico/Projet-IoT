@@ -34,3 +34,8 @@ MeadowCloud:
 
     # How often to send metrics to Meadow.Cloud
     HealthMetricsIntervalMinutes: 60
+
+# Optional app telemetry routing flags.
+Telemetry:
+    MeadowEnabled: true
+    AzureEnabled: false

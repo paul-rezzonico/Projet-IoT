@@ -16,3 +16,8 @@ Logging:
 
     # Enable Logging, Events, Command + Control
 #    Enabled: false
+
+# Optional app telemetry routing flags.
+Telemetry:
+    MeadowEnabled: false
+    AzureEnabled: false

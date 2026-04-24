@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Meadow;
 using Meadow.Foundation.Displays;
@@ -17,7 +18,8 @@ internal class MeadowApp : App<RaspberryPi>
     public override Task Initialize()
     {
         hardware = new projet_iotHardware(Device, SupportDisplay);
-        mainController = new MainController();
+        var telemetryPublisher = ConfigureTelemetryPublisher();
+        mainController = new MainController(telemetryPublisher);
         return mainController.Initialize(hardware);
     }
 
@@ -35,5 +37,18 @@ internal class MeadowApp : App<RaspberryPi>
         }
 
         return mainController.Run();
+    }
+
+    private static ITelemetryPublisher ConfigureTelemetryPublisher()
+    {
+        var settings = TelemetryTargetSettings.Load();
+        var sinks = new List<ITelemetrySink>();
+        var azureOptions = AzureMqttTelemetryOptions.FromEnvironment(settings);
+        if (azureOptions.Enabled)
+        {
+            sinks.Add(new AzureMqttTelemetrySink(azureOptions));
+        }
+
+        return new MultiSinkTelemetryPublisher(sinks);
     }
 }
