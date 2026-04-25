@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Meadow;
 using Meadow.Devices;
 using Meadow.Hardware;
 using projet_iot.Core;
@@ -12,7 +9,6 @@ namespace projet_iot.F7;
 internal class NetworkController : INetworkController
 {
     private const string UnknownValue = "unknown";
-    private static readonly string[] EmptyDnsServers = Array.Empty<string>();
 
     public event EventHandler? NetworkStatusChanged;
 
@@ -56,9 +52,7 @@ internal class NetworkController : INetworkController
     public string Gateway => ReadAdapterString("Gateway");
 
     public string SubnetMask => ReadAdapterString("SubnetMask");
-
-    public string[] DnsServers => ReadAdapterStringArray("DnsAddresses", "DnsServers");
-
+    
     public async Task Connect()
     {
         // Connect using meadow default connection system
@@ -74,11 +68,6 @@ internal class NetworkController : INetworkController
         Console.WriteLine($"MAC Address: {MacAddress}");
         Console.WriteLine($"Gateway: {Gateway}");
         Console.WriteLine($"Subnet Mask: {SubnetMask}");
-        Console.WriteLine("DNS Servers:");
-        foreach (var dns in DnsServers)
-        {
-            Console.WriteLine($"  - {dns}");
-        }
     }
 
     private string ReadAdapterString(params string[] propertyNames)
@@ -110,39 +99,5 @@ internal class NetworkController : INetworkController
         }
 
         return UnknownValue;
-    }
-
-    private string[] ReadAdapterStringArray(params string[] propertyNames)
-    {
-        foreach (var propertyName in propertyNames)
-        {
-            var property = wifi.GetType().GetProperty(propertyName);
-            if (property is null)
-            {
-                continue;
-            }
-
-            if (property.GetValue(wifi) is not IEnumerable rawCollection)
-            {
-                continue;
-            }
-
-            var values = new List<string>();
-            foreach (var item in rawCollection)
-            {
-                var value = item?.ToString();
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    values.Add(value);
-                }
-            }
-
-            if (values.Count > 0)
-            {
-                return values.ToArray();
-            }
-        }
-
-        return EmptyDnsServers;
     }
 }
