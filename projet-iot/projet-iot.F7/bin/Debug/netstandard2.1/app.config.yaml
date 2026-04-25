@@ -27,7 +27,7 @@ MeadowCloud:
     Enabled: true
 
     # Enable Over-the-air Updates
-    EnableUpdates: false
+    EnableUpdates: true
 
     # Enable Health Metrics
     EnableHealthMetrics: true

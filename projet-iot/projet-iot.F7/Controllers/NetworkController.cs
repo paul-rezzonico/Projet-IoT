@@ -61,23 +61,24 @@ internal class NetworkController : INetworkController
 
     public async Task Connect()
     {
-        if (wifi.IsConnected)
+        // Connect using meadow default connection system
+        // try to trigger the connection process by accessing the network adapter
+        var _ = wifi.IpAddress;
+    }
+    
+    public void ShowNetworkInfo()
+    {
+        Console.WriteLine($"Connected: {IsConnected}");
+        Console.WriteLine($"Host Name: {HostName}");
+        Console.WriteLine($"IP Address: {IpAddress}");
+        Console.WriteLine($"MAC Address: {MacAddress}");
+        Console.WriteLine($"Gateway: {Gateway}");
+        Console.WriteLine($"Subnet Mask: {SubnetMask}");
+        Console.WriteLine("DNS Servers:");
+        foreach (var dns in DnsServers)
         {
-            Resolver.Log.Info("WiFi is already connected.");
-            return;
+            Console.WriteLine($"  - {dns}");
         }
-
-        var ssid = Environment.GetEnvironmentVariable("WIFI_SSID");
-        var password = Environment.GetEnvironmentVariable("WIFI_PASSWORD");
-
-        if (!string.IsNullOrWhiteSpace(ssid) && !string.IsNullOrWhiteSpace(password))
-        {
-            Resolver.Log.Info("Connecting WiFi using environment credentials.");
-            await wifi.Connect(ssid, password, TimeSpan.FromSeconds(45));
-            return;
-        }
-
-        Resolver.Log.Info("No explicit WiFi credentials found in environment; relying on Meadow-managed auto-provisioned connection.");
     }
 
     private string ReadAdapterString(params string[] propertyNames)

@@ -62,14 +62,14 @@ public class SensorController
         if (platform.TemperatureSensor is ISensor<Temperature> temperatureReader)
         {
             var temperature = await temperatureReader.Read();
-            Resolver.Log.Info($"(Read) Temp: {temperature.Celsius:F2} °C");
+            // Resolver.Log.Info($(Read) Temp: {temperature.Celsius:F2} °C");
             CurrentTemperature = temperature;
         }
 
         if (platform.PressureSensor is ISensor<Pressure> pressureReader)
         {
             var pressure = await pressureReader.Read();
-            Resolver.Log.Info($"(Read) Pressure: {pressure.Pascal / 100:F2} hPa");
+            // Resolver.Log.Info($"(Read) Pressure: {pressure.Pascal / 100:F2} hPa");
             CurrentPressure = pressure;
         }
 
@@ -79,13 +79,13 @@ public class SensorController
 
     private void OnTemperatureUpdated(object sender, IChangeResult<Temperature> result)
     {
-        Resolver.Log.Info($"Temp: {result.New.Celsius:F2} °C");
+        // Resolver.Log.Info($"Temp: {result.New.Celsius:F2} °C");
         CurrentTemperature = result.New;
     }
 
     private void OnPressureUpdated(object sender, IChangeResult<Pressure> result)
     {
-        Resolver.Log.Info($"Pressure: {result.New.Pascal / 100:F2} hPa");
+        // Resolver.Log.Info($"Pressure: {result.New.Pascal / 100:F2} hPa");
         CurrentPressure = result.New;
     }
 }

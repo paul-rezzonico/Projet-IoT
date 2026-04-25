@@ -34,6 +34,7 @@ public class MainController
     private DateTime lastTelemetryPublishUtc = DateTime.MinValue;
 
     private static readonly TimeSpan TelemetryInterval = TimeSpan.FromSeconds(30);
+    private static readonly TimeSpan NetworkReadyTimeout = TimeSpan.FromSeconds(30);
 
     public MainController(ITelemetryPublisher? telemetryPublisher = null)
     {
@@ -174,18 +175,60 @@ public class MainController
         ConfigurationController.Save();
     }
 
+    private async Task<bool> WaitForNetworkReadyAsync(TimeSpan timeout)
+    {
+        if (NetworkController.IsConnected)
+        {
+            return true;
+        }
+
+        Resolver.Log.Info($"Waiting up to {timeout.TotalSeconds:0} seconds for network connection before showing network info.");
+
+        var networkReady = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        void OnNetworkReady(object? sender, EventArgs e)
+        {
+            if (NetworkController.IsConnected)
+            {
+                networkReady.TrySetResult(true);
+            }
+        }
+
+        NetworkController.NetworkStatusChanged += OnNetworkReady;
+
+        try
+        {
+            if (NetworkController.IsConnected)
+            {
+                return true;
+            }
+
+            var completedTask = await Task.WhenAny(networkReady.Task, Task.Delay(timeout));
+            if (completedTask == networkReady.Task)
+            {
+                return true;
+            }
+
+            Resolver.Log.Warn($"Network did not become ready within {timeout.TotalSeconds:0} seconds. Skipping network info display.");
+            return false;
+        }
+        finally
+        {
+            NetworkController.NetworkStatusChanged -= OnNetworkReady;
+        }
+    }
+
     public async Task Run()
     {
+        if (await WaitForNetworkReadyAsync(NetworkReadyTimeout))
+        {
+            NetworkController.ShowNetworkInfo();
+        }
+
         while (true)
         {
-            // print internet status
-            Console.WriteLine($"Network connected: {NetworkController.IsConnected}");
             // Print the current temperature.
             Console.WriteLine($"Current Temperature: {currentTemperature.ToString()}");
-            //Print Ip address
-            Console.WriteLine($"IP Address: {NetworkController.IpAddress}");
-            
-
             await Task.Delay(10000);
         }
     }
