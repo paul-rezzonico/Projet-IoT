@@ -59,4 +59,28 @@ internal class NetworkController : INetworkController
 
         IsConnected = true;
     }
+    public void ShowNetworkInfo()
+    {
+        Console.WriteLine($"Connected: {IsConnected}");
+        Console.WriteLine($"Host Name: {HostName}");
+        Console.WriteLine($"IP Address: {IpAddress}");
+        Console.WriteLine($"MAC Address: {MacAddress}");
+        Console.WriteLine($"Gateway: {Gateway}");
+        Console.WriteLine($"Subnet Mask: {SubnetMask}");
+    }
+
+    public async Task<bool> Ping(string host)
+    {
+        try
+        {
+            var ping = new System.Net.NetworkInformation.Ping();
+            var reply = await ping.SendPingAsync(host);
+            return reply.Status == System.Net.NetworkInformation.IPStatus.Success;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ping failed: {ex.Message}");
+            return false;
+        }
+    }
 }

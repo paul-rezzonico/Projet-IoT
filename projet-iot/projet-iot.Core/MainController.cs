@@ -223,6 +223,17 @@ public class MainController
         if (await WaitForNetworkReadyAsync(NetworkReadyTimeout))
         {
             NetworkController.ShowNetworkInfo();
+
+            Resolver.Log.Info("Pinging google.com...");
+            var success = await NetworkController.Ping("google.com");
+            if (success)
+            {
+                Resolver.Log.Info("Ping successful!");
+            }
+            else
+            {
+                Resolver.Log.Warn("Ping failed.");
+            }
         }
 
         while (true)

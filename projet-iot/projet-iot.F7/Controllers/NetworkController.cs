@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Meadow;
 using Meadow.Devices;
 using Meadow.Hardware;
 using projet_iot.Core;
@@ -99,5 +100,19 @@ internal class NetworkController : INetworkController
         }
 
         return UnknownValue;
+    }
+    public async Task<bool> Ping(string host)
+    {
+        try
+        {
+            var ping = new System.Net.NetworkInformation.Ping();
+            var reply = await ping.SendPingAsync(host);
+            return reply.Status == System.Net.NetworkInformation.IPStatus.Success;
+        }
+        catch (Exception ex)
+        {
+            Resolver.Log.Error($"Ping failed: {ex.Message}");
+            return false;
+        }
     }
 }
