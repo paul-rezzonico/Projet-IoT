@@ -178,9 +178,15 @@ public class MainController
     {
         while (true)
         {
-            // add any app logic here
+            // print internet status
+            Console.WriteLine($"Network connected: {NetworkController.IsConnected}");
+            // Print the current temperature.
+            Console.WriteLine($"Current Temperature: {currentTemperature.ToString()}");
+            //Print Ip address
+            Console.WriteLine($"IP Address: {NetworkController.IpAddress}");
+            
 
-            await Task.Delay(5000);
+            await Task.Delay(10000);
         }
     }
 }

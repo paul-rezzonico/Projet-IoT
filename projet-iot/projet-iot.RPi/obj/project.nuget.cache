@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4//zsRcNS1g=",
+  "dgSpecHash": "ajIWPz0Lb8U=",
   "success": true,
   "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.serialization.microjson\\2.5.0\\meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.linux\\2.5.0\\meadow.linux.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging\\2.5.0\\meadow.logging.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging.logproviders\\2.5.0\\meadow.logging.logproviders.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.mqtt\\2.5.0\\meadow.mqtt.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.units\\2.5.0\\meadow.units.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

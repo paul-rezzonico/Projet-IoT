@@ -3,10 +3,12 @@
 # http://developer.wildernesslabs.co/Meadow/Meadow.OS/Configuration/WiFi_Configuration/
 
 # WiFi network credentials
-#Credentials:
+Credentials:
 
-    # WiFi SSID
-#    Ssid: YourSSID
+    # WiFi SSID 
+    Ssid: tà dương
+    # Ssid: TP-Link_F99E
 
     # WiFi Password
-#    Password: SSIDPassword
+    Password: H5ebUd3GC7U9j5HAFQ
+#    Password: 05186150

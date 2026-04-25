@@ -66,4 +66,5 @@ public class MeadowF7FeatherApp : App<F7FeatherV2>
                value.Equals("yes", StringComparison.OrdinalIgnoreCase) ||
                value.Equals("on", StringComparison.OrdinalIgnoreCase);
     }
+    
 }

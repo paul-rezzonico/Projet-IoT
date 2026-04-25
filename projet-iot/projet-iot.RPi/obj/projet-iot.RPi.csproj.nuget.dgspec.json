@@ -61,6 +61,10 @@
             "Meadow.Foundation.Serialization.MicroJson": {
               "target": "Package",
               "version": "[2.*, )"
+            },
+            "Meadow.Logging.LogProviders": {
+              "target": "Package",
+              "version": "[2.*, )"
             }
           },
           "imports": [

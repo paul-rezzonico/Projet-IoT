@@ -90,7 +90,6 @@
           "Meadow.Contracts": "2.5.0",
           "Meadow.Foundation.Serialization.MicroJson": "2.5.0",
           "Meadow.Logging": "2.5.0",
-          "Meadow.MQTT": "2.5.0",
           "NetEscapades.Configuration.Yaml": "3.1.0",
           "System.IO.Hashing": "9.0.0",
           "System.IO.Ports": "8.0.0",
@@ -207,7 +206,18 @@
           }
         }
       },
-      "Meadow.MQTT/2.5.0": {},
+      "Meadow.Logging.LogProviders/2.5.0": {
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0",
+          "Meadow.Logging": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
       "Meadow.Units/2.5.0": {
         "runtime": {
           "lib/netstandard2.1/Meadow.Units.dll": {
@@ -216,7 +226,6 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
@@ -303,9 +312,6 @@
         }
       },
       "Microsoft.Extensions.Primitives/2.0.0": {
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -408,18 +414,13 @@
           "Silk.NET.OpenAL": "2.22.0",
           "Silk.NET.OpenGL": "2.22.0",
           "Silk.NET.Vulkan": "2.22.0",
-          "Silk.NET.Vulkan.Extensions.KHR": "2.22.0",
-          "Silk.NET.Windowing": "2.22.0"
+          "Silk.NET.Vulkan.Extensions.KHR": "2.22.0"
         }
       },
       "Silk.NET.Core/2.22.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
           "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
-          "Microsoft.Extensions.DependencyModel": "8.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "Microsoft.Extensions.DependencyModel": "8.0.0"
         },
         "runtime": {
           "lib/net6.0/Silk.NET.Core.dll": {
@@ -479,9 +480,7 @@
       },
       "Silk.NET.OpenAL/2.22.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.22.0",
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0"
+          "Silk.NET.Core": "2.22.0"
         },
         "runtime": {
           "lib/net5.0/Silk.NET.OpenAL.dll": {
@@ -523,12 +522,6 @@
             "assemblyVersion": "2.22.0.0",
             "fileVersion": "2.22.0.0"
           }
-        }
-      },
-      "Silk.NET.Windowing/2.22.0": {
-        "dependencies": {
-          "Silk.NET.Windowing.Common": "2.22.0",
-          "Silk.NET.Windowing.Glfw": "2.22.0"
         }
       },
       "Silk.NET.Windowing.Common/2.22.0": {
@@ -603,7 +596,6 @@
           }
         }
       },
-      "System.Buffers/4.5.1": {},
       "System.IO.Hashing/9.0.0": {
         "runtime": {
           "lib/net8.0/System.IO.Hashing.dll": {
@@ -645,9 +637,6 @@
           }
         }
       },
-      "System.Memory/4.5.5": {},
-      "System.Numerics.Vectors/4.5.0": {},
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Text.Encodings.Web/9.0.2": {
         "runtime": {
           "lib/net8.0/System.Text.Encodings.Web.dll": {
@@ -733,11 +722,12 @@
           "MQTTnet": "4.3.7.1207",
           "Meadow.Foundation": "2.5.0",
           "Meadow.Foundation.Graphics.MicroLayout": "2.5.0",
-          "Meadow.Foundation.Serialization.MicroJson": "2.5.0"
+          "Meadow.Foundation.Serialization.MicroJson": "2.5.0",
+          "Meadow.Logging.LogProviders": "2.5.0"
         },
         "runtime": {
           "projet-iot.Core.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -862,12 +852,12 @@
       "path": "meadow.logging/2.5.0",
       "hashPath": "meadow.logging.2.5.0.nupkg.sha512"
     },
-    "Meadow.MQTT/2.5.0": {
+    "Meadow.Logging.LogProviders/2.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WNk1FUpdWrl3RrRtjK293BPbOEr0H28nu1diaWGzM7gZ35vAK4zdKkScY7QOuCxkwPKKotpBjNBjRJK62tlKXQ==",
-      "path": "meadow.mqtt/2.5.0",
-      "hashPath": "meadow.mqtt.2.5.0.nupkg.sha512"
+      "sha512": "sha512-72rOTF75PClGxbQhW6/2i8+0Fn28rZTpWNSuI5uAqUbg9fqXWqm/vKNERRHfN3TUHx5KwwMF+4tKivl+2nDP6g==",
+      "path": "meadow.logging.logproviders/2.5.0",
+      "hashPath": "meadow.logging.logproviders.2.5.0.nupkg.sha512"
     },
     "Meadow.Units/2.5.0": {
       "type": "package",
@@ -875,13 +865,6 @@
       "sha512": "sha512-J2mhHs9M6dHUKJvPfoeVvO5lNIAZL0YV67EUHxhoUaRNncTP3U4l7h3YhdRTll4kV7R8tCDbh4s/bDJC+IXBow==",
       "path": "meadow.units/2.5.0",
       "hashPath": "meadow.units.2.5.0.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
       "type": "package",
@@ -1086,13 +1069,6 @@
       "path": "silk.net.vulkan.extensions.khr/2.22.0",
       "hashPath": "silk.net.vulkan.extensions.khr.2.22.0.nupkg.sha512"
     },
-    "Silk.NET.Windowing/2.22.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yKGe/8REdm+T43LdtfUpFUx9eQARwx6wTmEoJ2bANVGQPCvWYC2Qi1+haT6n63dyNIX+iJWKg4++F4TFjg0/Fw==",
-      "path": "silk.net.windowing/2.22.0",
-      "hashPath": "silk.net.windowing.2.22.0.nupkg.sha512"
-    },
     "Silk.NET.Windowing.Common/2.22.0": {
       "type": "package",
       "serviceable": true,
@@ -1135,13 +1111,6 @@
       "path": "sqlite-net-static/1.8.116",
       "hashPath": "sqlite-net-static.1.8.116.nupkg.sha512"
     },
-    "System.Buffers/4.5.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
-      "path": "system.buffers/4.5.1",
-      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
-    },
     "System.IO.Hashing/9.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1162,27 +1131,6 @@
       "sha512": "sha512-MaiPbx2/QXZc62gm/DrajRrGPG1lU4m08GWMoWiymPYM+ba4kfACp2PbiYpqJ4QiFGhHD00zX3RoVDTucjWe9g==",
       "path": "system.io.ports/8.0.0",
       "hashPath": "system.io.ports.8.0.0.nupkg.sha512"
-    },
-    "System.Memory/4.5.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
-      "path": "system.memory/4.5.5",
-      "hashPath": "system.memory.4.5.5.nupkg.sha512"
-    },
-    "System.Numerics.Vectors/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
-      "path": "system.numerics.vectors/4.5.0",
-      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
-      "path": "system.runtime.compilerservices.unsafe/6.0.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/9.0.2": {
       "type": "package",

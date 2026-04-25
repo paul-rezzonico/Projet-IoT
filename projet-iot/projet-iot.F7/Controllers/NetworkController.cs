@@ -9,8 +9,8 @@ namespace projet_iot.F7;
 
 internal class NetworkController : INetworkController
 {
-    private const string WIFI_NAME = "[SOME_NAME]";
-    private const string WIFI_PASSWORD = "[SOME_SECRET]";
+    private const string WIFI_NAME = "tà dương";
+    private const string WIFI_PASSWORD = "H5ebUd3GC7U9j5HAFQ";
 
     public event EventHandler? NetworkStatusChanged;
 
@@ -44,6 +44,8 @@ internal class NetworkController : INetworkController
     {
         get => wifi.IsConnected;
     }
+
+    public string IpAddress => wifi.IpAddress?.ToString() ?? "0.0.0.0";
 
     public async Task Connect()
     {

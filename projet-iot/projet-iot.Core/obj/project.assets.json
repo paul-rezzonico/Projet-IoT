@@ -94,6 +94,23 @@
           }
         }
       },
+      "Meadow.Logging.LogProviders/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0",
+          "Meadow.Logging": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Meadow.Units/2.5.0": {
         "type": "package",
         "compile": {
@@ -211,6 +228,20 @@
         "meadow.logging.nuspec"
       ]
     },
+    "Meadow.Logging.LogProviders/2.5.0": {
+      "sha512": "72rOTF75PClGxbQhW6/2i8+0Fn28rZTpWNSuI5uAqUbg9fqXWqm/vKNERRHfN3TUHx5KwwMF+4tKivl+2nDP6g==",
+      "type": "package",
+      "path": "meadow.logging.logproviders/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.LogProviders.dll",
+        "lib/netstandard2.1/Meadow.LogProviders.xml",
+        "meadow.logging.logproviders.2.5.0.nupkg.sha512",
+        "meadow.logging.logproviders.nuspec"
+      ]
+    },
     "Meadow.Units/2.5.0": {
       "sha512": "J2mhHs9M6dHUKJvPfoeVvO5lNIAZL0YV67EUHxhoUaRNncTP3U4l7h3YhdRTll4kV7R8tCDbh4s/bDJC+IXBow==",
       "type": "package",
@@ -266,7 +297,8 @@
       "MQTTnet >= 4.*",
       "Meadow.Foundation >= 2.*",
       "Meadow.Foundation.Graphics.MicroLayout >= 2.*",
-      "Meadow.Foundation.Serialization.MicroJson >= 2.*"
+      "Meadow.Foundation.Serialization.MicroJson >= 2.*",
+      "Meadow.Logging.LogProviders >= 2.*"
     ]
   },
   "packageFolders": {
@@ -327,6 +359,10 @@
             "version": "[2.*, )"
           },
           "Meadow.Foundation.Serialization.MicroJson": {
+            "target": "Package",
+            "version": "[2.*, )"
+          },
+          "Meadow.Logging.LogProviders": {
             "target": "Package",
             "version": "[2.*, )"
           }

@@ -280,6 +280,23 @@
           }
         }
       },
+      "Meadow.Logging.LogProviders/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0",
+          "Meadow.Logging": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Meadow.Modbus/2.5.0": {
         "type": "package",
         "dependencies": {
@@ -670,7 +687,8 @@
           "MQTTnet": "4.0.0",
           "Meadow.Foundation": "2.0.0",
           "Meadow.Foundation.Graphics.MicroLayout": "2.0.0",
-          "Meadow.Foundation.Serialization.MicroJson": "2.0.0"
+          "Meadow.Foundation.Serialization.MicroJson": "2.0.0",
+          "Meadow.Logging.LogProviders": "2.0.0"
         },
         "compile": {
           "bin/placeholder/projet-iot.Core.dll": {}
@@ -931,6 +949,20 @@
         "lib/netstandard2.1/Meadow.Logging.xml",
         "meadow.logging.2.5.0.nupkg.sha512",
         "meadow.logging.nuspec"
+      ]
+    },
+    "Meadow.Logging.LogProviders/2.5.0": {
+      "sha512": "72rOTF75PClGxbQhW6/2i8+0Fn28rZTpWNSuI5uAqUbg9fqXWqm/vKNERRHfN3TUHx5KwwMF+4tKivl+2nDP6g==",
+      "type": "package",
+      "path": "meadow.logging.logproviders/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Meadow.LogProviders.dll",
+        "lib/netstandard2.1/Meadow.LogProviders.xml",
+        "meadow.logging.logproviders.2.5.0.nupkg.sha512",
+        "meadow.logging.logproviders.nuspec"
       ]
     },
     "Meadow.Modbus/2.5.0": {
@@ -1475,6 +1507,7 @@
     ".NETStandard,Version=v2.1": [
       "Meadow.F7 >= 2.*",
       "Meadow.Foundation >= 2.*",
+      "Meadow.Logging.LogProviders >= 2.*",
       "Meadow.ProjectLab >= 2.*",
       "projet-iot.Core >= 1.0.0"
     ]
@@ -1533,6 +1566,10 @@
             "version": "[2.*, )"
           },
           "Meadow.Foundation": {
+            "target": "Package",
+            "version": "[2.*, )"
+          },
+          "Meadow.Logging.LogProviders": {
             "target": "Package",
             "version": "[2.*, )"
           },

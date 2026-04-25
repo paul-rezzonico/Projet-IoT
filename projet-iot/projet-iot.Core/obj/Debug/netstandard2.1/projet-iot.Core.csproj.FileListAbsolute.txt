@@ -8,3 +8,14 @@ C:\Users\rezpo\projet-iot\projet-iot\projet-iot.Core\bin\Debug\netstandard2.1\pr
 C:\Users\rezpo\projet-iot\projet-iot\projet-iot.Core\bin\Debug\netstandard2.1\projet-iot.Core.pdb
 C:\Users\rezpo\projet-iot\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.dll
 C:\Users\rezpo\projet-iot\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.pdb
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\bin\Debug\netstandard2.1\projet-iot.Core.deps.json
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\bin\Debug\netstandard2.1\projet-iot.Core.dll
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\bin\Debug\netstandard2.1\projet-iot.Core.pdb
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.csproj.AssemblyReference.cache
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.AssemblyInfoInputs.cache
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.AssemblyInfo.cs
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.csproj.CoreCompileInputs.cache
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.sourcelink.json
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.dll
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.Core\obj\Debug\netstandard2.1\projet-iot.Core.pdb

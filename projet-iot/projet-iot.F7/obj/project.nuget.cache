@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cRHF01ueODo=",
+  "dgSpecHash": "4xMBKRgL/pI=",
   "success": true,
   "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.F7\\projet-iot.F7.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.motion.bmi270\\2.5.0\\meadow.foundation.sensors.motion.bmi270.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.serialization.microjson\\2.5.0\\meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging\\2.5.0\\meadow.logging.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging.logproviders\\2.5.0\\meadow.logging.logproviders.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.modbus\\2.5.0\\meadow.modbus.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.mqtt\\2.5.0\\meadow.mqtt.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.projectlab\\2.5.0\\meadow.projectlab.2.5.0.nupkg.sha512",

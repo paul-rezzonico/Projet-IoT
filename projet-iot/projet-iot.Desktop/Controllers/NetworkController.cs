@@ -40,6 +40,8 @@ internal class NetworkController : INetworkController
         }
     }
 
+    public string IpAddress => IsConnected ? "127.0.0.1" : "0.0.0.0";
+
     public async Task Connect()
     {
         // simulate connection delay

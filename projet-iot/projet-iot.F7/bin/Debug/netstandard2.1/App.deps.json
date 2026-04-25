@@ -11,6 +11,7 @@
         "dependencies": {
           "Meadow.F7": "2.5.0",
           "Meadow.Foundation": "2.5.0",
+          "Meadow.Logging.LogProviders": "2.5.0",
           "Meadow.ProjectLab": "2.5.0",
           "projet-iot.Core": "1.0.0"
         },
@@ -23,7 +24,6 @@
           "Meadow.Contracts": "2.5.0",
           "Meadow.Foundation.Serialization.MicroJson": "2.5.0",
           "Meadow.Logging": "2.5.0",
-          "Meadow.MQTT": "2.5.0",
           "NetEscapades.Configuration.Yaml": "3.1.0",
           "System.IO.Hashing": "9.0.0",
           "System.IO.Ports": "8.0.0",
@@ -211,6 +211,18 @@
           }
         }
       },
+      "Meadow.Logging.LogProviders/2.5.0": {
+        "dependencies": {
+          "Meadow.Contracts": "2.5.0",
+          "Meadow.Logging": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Meadow.LogProviders.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
       "Meadow.Modbus/2.5.0": {
         "dependencies": {
           "Meadow.Contracts": "2.5.0",
@@ -223,7 +235,6 @@
           }
         }
       },
-      "Meadow.MQTT/2.5.0": {},
       "Meadow.ProjectLab/2.5.0": {
         "dependencies": {
           "Meadow.F7": "2.5.0",
@@ -446,11 +457,12 @@
           "MQTTnet": "4.3.7.1207",
           "Meadow.Foundation": "2.5.0",
           "Meadow.Foundation.Graphics.MicroLayout": "2.5.0",
-          "Meadow.Foundation.Serialization.MicroJson": "2.5.0"
+          "Meadow.Foundation.Serialization.MicroJson": "2.5.0",
+          "Meadow.Logging.LogProviders": "2.5.0"
         },
         "runtime": {
           "projet-iot.Core.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -582,19 +594,19 @@
       "path": "meadow.logging/2.5.0",
       "hashPath": "meadow.logging.2.5.0.nupkg.sha512"
     },
+    "Meadow.Logging.LogProviders/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-72rOTF75PClGxbQhW6/2i8+0Fn28rZTpWNSuI5uAqUbg9fqXWqm/vKNERRHfN3TUHx5KwwMF+4tKivl+2nDP6g==",
+      "path": "meadow.logging.logproviders/2.5.0",
+      "hashPath": "meadow.logging.logproviders.2.5.0.nupkg.sha512"
+    },
     "Meadow.Modbus/2.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-F6nXW7jRSbEB81YV7xLzL41x0nGdIFxHqRVE0duGBvTDmDT3Olvs9jazP9VMO7biQKHKxOdKZcyeLEhPhUbf6w==",
       "path": "meadow.modbus/2.5.0",
       "hashPath": "meadow.modbus.2.5.0.nupkg.sha512"
-    },
-    "Meadow.MQTT/2.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-WNk1FUpdWrl3RrRtjK293BPbOEr0H28nu1diaWGzM7gZ35vAK4zdKkScY7QOuCxkwPKKotpBjNBjRJK62tlKXQ==",
-      "path": "meadow.mqtt/2.5.0",
-      "hashPath": "meadow.mqtt.2.5.0.nupkg.sha512"
     },
     "Meadow.ProjectLab/2.5.0": {
       "type": "package",

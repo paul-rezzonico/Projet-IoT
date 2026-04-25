@@ -5,8 +5,10 @@
 # WiFi network credentials
 Credentials:
 
-    # WiFi SSID
-    Ssid: TP-Link_F99E
+    # WiFi SSID 
+    Ssid: tà dương
+    # Ssid: TP-Link_F99E
 
     # WiFi Password
-    Password: 05186150
+    Password: H5ebUd3GC7U9j5HAFQ
+#    Password: 05186150

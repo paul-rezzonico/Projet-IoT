@@ -10,6 +10,8 @@ internal class NetworkController : INetworkController
 
     public bool IsConnected { get; private set; }
 
+    public string IpAddress => IsConnected ? "127.0.0.1" : "0.0.0.0";
+
     public Task Connect()
     {
         IsConnected = true;
