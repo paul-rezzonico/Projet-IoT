@@ -30,10 +30,10 @@ MeadowCloud:
     EnableUpdates: false
 
     # Enable Health Metrics
-    EnableHealthMetrics: false
+    EnableHealthMetrics: true
 
     # How often to send metrics to Meadow.Cloud
-    HealthMetricsIntervalMinutes: 60
+    HealthMetricsIntervalMinutes: 1
 
 # Optional app telemetry routing flags.
 Telemetry:

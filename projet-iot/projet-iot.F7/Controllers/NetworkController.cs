@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Meadow;
 using Meadow.Devices;
@@ -9,8 +11,8 @@ namespace projet_iot.F7;
 
 internal class NetworkController : INetworkController
 {
-    private const string WIFI_NAME = "tà dương";
-    private const string WIFI_PASSWORD = "H5ebUd3GC7U9j5HAFQ";
+    private const string UnknownValue = "unknown";
+    private static readonly string[] EmptyDnsServers = Array.Empty<string>();
 
     public event EventHandler? NetworkStatusChanged;
 
@@ -47,8 +49,99 @@ internal class NetworkController : INetworkController
 
     public string IpAddress => wifi.IpAddress?.ToString() ?? "0.0.0.0";
 
+    public string HostName => Environment.MachineName;
+
+    public string MacAddress => ReadAdapterString("MacAddress");
+
+    public string Gateway => ReadAdapterString("Gateway");
+
+    public string SubnetMask => ReadAdapterString("SubnetMask");
+
+    public string[] DnsServers => ReadAdapterStringArray("DnsAddresses", "DnsServers");
+
     public async Task Connect()
     {
-        await wifi.Connect(WIFI_NAME, WIFI_PASSWORD, TimeSpan.FromSeconds(45));
+        if (wifi.IsConnected)
+        {
+            Resolver.Log.Info("WiFi is already connected.");
+            return;
+        }
+
+        var ssid = Environment.GetEnvironmentVariable("WIFI_SSID");
+        var password = Environment.GetEnvironmentVariable("WIFI_PASSWORD");
+
+        if (!string.IsNullOrWhiteSpace(ssid) && !string.IsNullOrWhiteSpace(password))
+        {
+            Resolver.Log.Info("Connecting WiFi using environment credentials.");
+            await wifi.Connect(ssid, password, TimeSpan.FromSeconds(45));
+            return;
+        }
+
+        Resolver.Log.Info("No explicit WiFi credentials found in environment; relying on Meadow-managed auto-provisioned connection.");
+    }
+
+    private string ReadAdapterString(params string[] propertyNames)
+    {
+        foreach (var propertyName in propertyNames)
+        {
+            var property = wifi.GetType().GetProperty(propertyName);
+            if (property is null)
+            {
+                continue;
+            }
+
+            var rawValue = property.GetValue(wifi);
+            if (rawValue is null)
+            {
+                continue;
+            }
+
+            if (rawValue is string stringValue)
+            {
+                return string.IsNullOrWhiteSpace(stringValue) ? UnknownValue : stringValue;
+            }
+
+            var value = rawValue.ToString();
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                return value;
+            }
+        }
+
+        return UnknownValue;
+    }
+
+    private string[] ReadAdapterStringArray(params string[] propertyNames)
+    {
+        foreach (var propertyName in propertyNames)
+        {
+            var property = wifi.GetType().GetProperty(propertyName);
+            if (property is null)
+            {
+                continue;
+            }
+
+            if (property.GetValue(wifi) is not IEnumerable rawCollection)
+            {
+                continue;
+            }
+
+            var values = new List<string>();
+            foreach (var item in rawCollection)
+            {
+                var value = item?.ToString();
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    values.Add(value);
+                }
+            }
+
+            if (values.Count > 0)
+            {
+                return values.ToArray();
+            }
+        }
+
+        return EmptyDnsServers;
     }
 }
