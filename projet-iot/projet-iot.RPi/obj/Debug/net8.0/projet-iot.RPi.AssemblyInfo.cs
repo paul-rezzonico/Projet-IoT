@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("projet-iot.RPi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86a2c808b62573780fce7c46a00c2cf330411c57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2a27b4637094575d9df8bbbcaf5b851ee892f72")]
 [assembly: System.Reflection.AssemblyProductAttribute("projet-iot.RPi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("projet-iot.RPi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

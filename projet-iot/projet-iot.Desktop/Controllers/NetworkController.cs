@@ -42,6 +42,16 @@ internal class NetworkController : INetworkController
 
     public string IpAddress => IsConnected ? "127.0.0.1" : "0.0.0.0";
 
+    public string HostName => Environment.MachineName;
+
+    public string MacAddress => IsConnected ? "02:00:00:00:00:01" : "00:00:00:00:00:00";
+
+    public string Gateway => IsConnected ? "127.0.0.1" : "0.0.0.0";
+
+    public string SubnetMask => IsConnected ? "255.0.0.0" : "0.0.0.0";
+
+    public string[] DnsServers => IsConnected ? new[] { "127.0.0.1" } : Array.Empty<string>();
+
     public async Task Connect()
     {
         // simulate connection delay
