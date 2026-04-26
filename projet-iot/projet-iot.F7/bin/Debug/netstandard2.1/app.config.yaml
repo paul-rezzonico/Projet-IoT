@@ -18,7 +18,7 @@ Logging:
     LogLevel:
     
         # Trace, Debug, Information, Warning, or Error
-        Default: Information
+        Default: Warning
 
 # Meadow.Cloud configuration.
 MeadowCloud:
@@ -37,5 +37,10 @@ MeadowCloud:
 
 # Optional app telemetry routing flags.
 Telemetry:
-    MeadowEnabled: true
-    AzureEnabled: false
+    MeadowEnabled: false
+    AzureEnabled: true
+    Azure:
+        Hostname: "YOUR_AZURE_IOT_HUB_HOSTNAME"
+        DeviceId: "YOUR_DEVICE_ID"
+        SasToken: "YOUR_SAS_TOKEN"
+        AllowUntrustedCertificates: false

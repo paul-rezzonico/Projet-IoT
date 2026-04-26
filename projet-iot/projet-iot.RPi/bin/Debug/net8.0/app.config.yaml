@@ -20,4 +20,9 @@ Logging:
 # Optional app telemetry routing flags.
 Telemetry:
     MeadowEnabled: false
-    AzureEnabled: false
+    AzureEnabled: true
+    Azure:
+        Hostname: "YOUR_AZURE_IOT_HUB_HOSTNAME"
+        DeviceId: "YOUR_DEVICE_ID"
+        SasToken: "YOUR_SAS_TOKEN"
+        AllowUntrustedCertificates: false
