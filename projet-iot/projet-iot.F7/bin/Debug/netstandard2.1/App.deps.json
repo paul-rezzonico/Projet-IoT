@@ -11,6 +11,7 @@
         "dependencies": {
           "Meadow.F7": "2.5.0",
           "Meadow.Foundation": "2.5.0",
+          "Meadow.Foundation.Sensors.Atmospheric.Bmx280": "2.5.0",
           "Meadow.Logging.LogProviders": "2.5.0",
           "Meadow.ProjectLab": "2.5.0",
           "projet-iot.Core": "1.0.0"
@@ -157,6 +158,17 @@
         },
         "runtime": {
           "lib/netstandard2.1/Bme68x.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+        "dependencies": {
+          "Meadow.Foundation": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Bmx280.dll": {
             "assemblyVersion": "2.5.0.0",
             "fileVersion": "2.5.0.0"
           }
@@ -558,6 +570,13 @@
       "sha512": "sha512-0fburejS2f+jZOQtcnlq+zllPLhIC1A+m0D2IuZ7PlTAXJ6PRJXqIPbG9J10NgG8A06MJpt/3pZaNtDaOOv+OQ==",
       "path": "meadow.foundation.sensors.atmospheric.bme68x/2.5.0",
       "hashPath": "meadow.foundation.sensors.atmospheric.bme68x.2.5.0.nupkg.sha512"
+    },
+    "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RcX+mGHDUl0hPCUOa66pdXiAZP68NdwOubHRahxZaDR6y8JUVf8BQTwFOF7EGFhzNnRDKPdr5q0eqSAsdddlSQ==",
+      "path": "meadow.foundation.sensors.atmospheric.bmx280/2.5.0",
+      "hashPath": "meadow.foundation.sensors.atmospheric.bmx280.2.5.0.nupkg.sha512"
     },
     "Meadow.Foundation.Sensors.Hid.Xpt2046/2.5.0": {
       "type": "package",

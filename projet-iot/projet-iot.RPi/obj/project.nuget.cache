@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ajIWPz0Lb8U=",
+  "dgSpecHash": "9l+K5HMvMEM=",
   "success": true,
   "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.RPi\\projet-iot.RPi.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.displays.silk\\2.5.0\\meadow.foundation.displays.silk.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.graphics.micrographics\\2.5.0\\meadow.foundation.graphics.micrographics.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.graphics.microlayout\\2.5.0\\meadow.foundation.graphics.microlayout.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.atmospheric.bmx280\\2.5.0\\meadow.foundation.sensors.atmospheric.bmx280.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.serialization.microjson\\2.5.0\\meadow.foundation.serialization.microjson.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.linux\\2.5.0\\meadow.linux.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.logging\\2.5.0\\meadow.logging.2.5.0.nupkg.sha512",

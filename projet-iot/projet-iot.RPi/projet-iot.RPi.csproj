@@ -8,6 +8,7 @@
     <ItemGroup>
         <PackageReference Include="Meadow.Foundation" Version="2.*"/>
         <PackageReference Include="Meadow.Foundation.Displays.Gtk" Version="2.*"/>
+        <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Bmx280" Version="2.5.0" />
         <PackageReference Include="Meadow.Linux" Version="2.*"/>
     </ItemGroup>
     <ItemGroup>

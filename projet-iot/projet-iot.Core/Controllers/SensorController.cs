@@ -52,7 +52,7 @@ public class SensorController
         }
     }
 
-    /// <summary>?
+    /// <summary>
     /// Performs an initial one-shot read of the sensor (mirrors the bmp.Read() call
     /// from MeadowApp.Initialize()) and starts continuous updates every second.
     /// Call this from MainController.Initialize().

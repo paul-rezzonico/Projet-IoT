@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4xMBKRgL/pI=",
+  "dgSpecHash": "tMhAQ9qBCjk=",
   "success": true,
   "projectFilePath": "C:\\Users\\rezpo\\dev\\Projet-IoT\\projet-iot\\projet-iot.F7\\projet-iot.F7.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.ics.ioexpanders.sc16is7x2\\2.5.0\\meadow.foundation.ics.ioexpanders.sc16is7x2.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.atmospheric.ahtx0\\2.5.0\\meadow.foundation.sensors.atmospheric.ahtx0.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.atmospheric.bme68x\\2.5.0\\meadow.foundation.sensors.atmospheric.bme68x.2.5.0.nupkg.sha512",
+    "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.atmospheric.bmx280\\2.5.0\\meadow.foundation.sensors.atmospheric.bmx280.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.hid.xpt2046\\2.5.0\\meadow.foundation.sensors.hid.xpt2046.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.light.bh1750\\2.5.0\\meadow.foundation.sensors.light.bh1750.2.5.0.nupkg.sha512",
     "C:\\Users\\rezpo\\.nuget\\packages\\meadow.foundation.sensors.motion.bmi270\\2.5.0\\meadow.foundation.sensors.motion.bmi270.2.5.0.nupkg.sha512",

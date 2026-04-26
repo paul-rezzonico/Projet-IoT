@@ -206,6 +206,22 @@
           }
         }
       },
+      "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Foundation": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Bmx280.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Bmx280.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Meadow.Foundation.Sensors.Hid.Xpt2046/2.5.0": {
         "type": "package",
         "dependencies": {
@@ -877,6 +893,21 @@
         "meadow.foundation.sensors.atmospheric.bme68x.nuspec"
       ]
     },
+    "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+      "sha512": "RcX+mGHDUl0hPCUOa66pdXiAZP68NdwOubHRahxZaDR6y8JUVf8BQTwFOF7EGFhzNnRDKPdr5q0eqSAsdddlSQ==",
+      "type": "package",
+      "path": "meadow.foundation.sensors.atmospheric.bmx280/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/Bmx280.dll",
+        "lib/netstandard2.1/Bmx280.xml",
+        "meadow.foundation.sensors.atmospheric.bmx280.2.5.0.nupkg.sha512",
+        "meadow.foundation.sensors.atmospheric.bmx280.nuspec"
+      ]
+    },
     "Meadow.Foundation.Sensors.Hid.Xpt2046/2.5.0": {
       "sha512": "Rf5PGjrRoee3T2Y1rv8pr6bQAXbY/yhyct70zEEZY2SHsYWyEs2VQzfd2Hf+I9YQyGEiFPQjDMGOCPP2Ung6mw==",
       "type": "package",
@@ -1507,6 +1538,7 @@
     ".NETStandard,Version=v2.1": [
       "Meadow.F7 >= 2.*",
       "Meadow.Foundation >= 2.*",
+      "Meadow.Foundation.Sensors.Atmospheric.Bmx280 >= 2.5.0",
       "Meadow.Logging.LogProviders >= 2.*",
       "Meadow.ProjectLab >= 2.*",
       "projet-iot.Core >= 1.0.0"
@@ -1568,6 +1600,10 @@
           "Meadow.Foundation": {
             "target": "Package",
             "version": "[2.*, )"
+          },
+          "Meadow.Foundation.Sensors.Atmospheric.Bmx280": {
+            "target": "Package",
+            "version": "[2.5.0, )"
           },
           "Meadow.Logging.LogProviders": {
             "target": "Package",

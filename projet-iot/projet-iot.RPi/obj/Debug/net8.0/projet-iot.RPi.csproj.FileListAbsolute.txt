@@ -174,3 +174,4 @@ C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.RPi\obj\Debug\net8.0\refint\
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.RPi\obj\Debug\net8.0\projet-iot.RPi.pdb
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.RPi\obj\Debug\net8.0\projet-iot.RPi.genruntimeconfig.cache
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.RPi\obj\Debug\net8.0\ref\projet-iot.RPi.dll
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.RPi\bin\Debug\net8.0\Bmx280.dll

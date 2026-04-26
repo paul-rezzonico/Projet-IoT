@@ -106,3 +106,4 @@ C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\obj\Debug\netstandard2.1\
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\obj\Debug\netstandard2.1\projet-i.7F422299.Up2Date
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\obj\Debug\netstandard2.1\App.dll
 C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\obj\Debug\netstandard2.1\App.pdb
+C:\Users\rezpo\dev\Projet-IoT\projet-iot\projet-iot.F7\bin\Debug\netstandard2.1\Bmx280.dll

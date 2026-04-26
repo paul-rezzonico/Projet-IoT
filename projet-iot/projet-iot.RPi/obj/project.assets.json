@@ -204,6 +204,22 @@
           }
         }
       },
+      "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Meadow.Foundation": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Bmx280.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Bmx280.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
         "type": "package",
         "compile": {
@@ -1229,6 +1245,21 @@
         "lib/netstandard2.1/MicroLayout.xml",
         "meadow.foundation.graphics.microlayout.2.5.0.nupkg.sha512",
         "meadow.foundation.graphics.microlayout.nuspec"
+      ]
+    },
+    "Meadow.Foundation.Sensors.Atmospheric.Bmx280/2.5.0": {
+      "sha512": "RcX+mGHDUl0hPCUOa66pdXiAZP68NdwOubHRahxZaDR6y8JUVf8BQTwFOF7EGFhzNnRDKPdr5q0eqSAsdddlSQ==",
+      "type": "package",
+      "path": "meadow.foundation.sensors.atmospheric.bmx280/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "icon.png",
+        "lib/netstandard2.1/Bmx280.dll",
+        "lib/netstandard2.1/Bmx280.xml",
+        "meadow.foundation.sensors.atmospheric.bmx280.2.5.0.nupkg.sha512",
+        "meadow.foundation.sensors.atmospheric.bmx280.nuspec"
       ]
     },
     "Meadow.Foundation.Serialization.MicroJson/2.5.0": {
@@ -2491,6 +2522,7 @@
     "net8.0": [
       "Meadow.Foundation >= 2.*",
       "Meadow.Foundation.Displays.Gtk >= 2.*",
+      "Meadow.Foundation.Sensors.Atmospheric.Bmx280 >= 2.5.0",
       "Meadow.Linux >= 2.*",
       "projet-iot.Core >= 1.0.0"
     ]
@@ -2551,6 +2583,10 @@
           "Meadow.Foundation.Displays.Gtk": {
             "target": "Package",
             "version": "[2.*, )"
+          },
+          "Meadow.Foundation.Sensors.Atmospheric.Bmx280": {
+            "target": "Package",
+            "version": "[2.5.0, )"
           },
           "Meadow.Linux": {
             "target": "Package",

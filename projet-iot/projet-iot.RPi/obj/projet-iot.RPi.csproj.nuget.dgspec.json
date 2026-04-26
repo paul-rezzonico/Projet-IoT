@@ -141,6 +141,10 @@
               "target": "Package",
               "version": "[2.*, )"
             },
+            "Meadow.Foundation.Sensors.Atmospheric.Bmx280": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
             "Meadow.Linux": {
               "target": "Package",
               "version": "[2.*, )"
