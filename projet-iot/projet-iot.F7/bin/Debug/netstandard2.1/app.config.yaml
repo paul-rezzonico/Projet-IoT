@@ -18,19 +18,19 @@ Logging:
     LogLevel:
     
         # Trace, Debug, Information, Warning, or Error
-        Default: Warning
+        Default: Debug
 
 # Meadow.Cloud configuration.
 MeadowCloud:
 
     # Enable Logging, Events, Command + Control
-    Enabled: true
+    Enabled: false
 
     # Enable Over-the-air Updates
-    EnableUpdates: true
+    EnableUpdates: false
 
     # Enable Health Metrics
-    EnableHealthMetrics: true
+    EnableHealthMetrics: false
 
     # How often to send metrics to Meadow.Cloud
     HealthMetricsIntervalMinutes: 1
@@ -40,7 +40,7 @@ Telemetry:
     MeadowEnabled: false
     AzureEnabled: true
     Azure:
-        Hostname: "YOUR_AZURE_IOT_HUB_HOSTNAME"
-        DeviceId: "YOUR_DEVICE_ID"
-        SasToken: "YOUR_SAS_TOKEN"
-        AllowUntrustedCertificates: false
+        Hostname: "meadow-iot-hub.azure-devices.net"
+        DeviceId: "meadow-device"
+        SasToken: "SharedAccessSignature sr=meadow-iot-hub.azure-devices.net%2Fdevices%2Fmeadow-device&sig=DoIPVGMF6vgaPpHqjemjB1q%2B5OxCj%2Fjh1ZqWy5cjshw%3D&se=1777238829"
+        AllowUntrustedCertificates: true

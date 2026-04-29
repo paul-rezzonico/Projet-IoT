@@ -52,6 +52,15 @@ public sealed class TelemetryTargetSettings
             var key = trimmed[..colon].Trim();
             var value = trimmed[(colon + 1)..].Trim();
 
+            if (value.Length >= 2 && value.StartsWith("\"") && value.EndsWith("\""))
+            {
+                value = value[1..^1];
+            }
+            else if (value.Length >= 2 && value.StartsWith("'") && value.EndsWith("'"))
+            {
+                value = value[1..^1];
+            }
+
             if (value.Length == 0)
             {
                 sections.Push((indent, key));

@@ -30,6 +30,8 @@ public class MainController
     private Temperature.UnitType units;
     private Temperature currentTemperature;
     private Temperature thresholdTemperature;
+    private Pressure currentPressure;
+    private Pressure thresholdPressure;
     private bool? isBelowThreshold;
     private DateTime lastTelemetryPublishUtc = DateTime.MinValue;
 
@@ -49,9 +51,7 @@ public class MainController
         }
 
         this.hardware = hardware;
-
-        this.thresholdTemperature = 68.Fahrenheit();
-
+        
         // create generic services
         configurationController = new ConfigurationController();
         cloudController = new CloudController(Resolver.CommandService, telemetryPublisher);
@@ -99,6 +99,7 @@ public class MainController
         if (belowThreshold != isBelowThreshold.Value)
         {
             isBelowThreshold = belowThreshold;
+            Resolver.Log.Info($"Threshold crossed! Below: {belowThreshold}. Triggering telemetry...");
             _ = CloudController.PublishThresholdEventAsync(currentTemperature, thresholdTemperature, belowThreshold);
             _ = CloudController.PublishTelemetryAsync(
                 currentTemperature,
@@ -118,6 +119,7 @@ public class MainController
         if (DateTime.UtcNow - lastTelemetryPublishUtc >= TelemetryInterval)
         {
             lastTelemetryPublishUtc = DateTime.UtcNow;
+            Resolver.Log.Info("Triggering interval telemetry publish...");
             _ = CloudController.PublishTelemetryAsync(
                 currentTemperature,
                 TryGetPressurePa(),
@@ -238,8 +240,9 @@ public class MainController
 
         while (true)
         {
-            // Print the current temperature.
-            Console.WriteLine($"Current Temperature: {currentTemperature.ToString()}");
+            Console.WriteLine($"Current Temperature: {currentTemperature} {units}");
+            // Pritn current pressure 
+            Console.WriteLine($"Threshold Pressure:  {units}");
             await Task.Delay(10000);
         }
     }
